@@ -1,6 +1,7 @@
 import 'package:event/detail_event.dart';
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
+import 'package:readmore/readmore.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Event Travel',
       theme: ThemeData(
+        fontFamily: 'Poppins',
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Event'),
@@ -30,8 +32,6 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-
-class ClassName {}
 
 class _MyHomePageState extends State<MyHomePage> {
   final List category = [
@@ -137,16 +137,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                            backgroundColor: Colors.black,
+                            backgroundColor: Color.fromRGBO(28, 56, 121, 1),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0))),
                         onPressed: () {},
                         child: Text(
                           category[i],
                           style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              fontFamily: 'Poppins'),
+                              fontWeight: FontWeight.w400, fontSize: 12),
                         ),
                       ),
                     );
@@ -169,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //           style: TextStyle(
               //               fontWeight: FontWeight.w400,
               //               fontSize: 12,
-              //               fontFamily: 'Poppins'),
+              //               ),
               //         ),
               //       ),
               //       ElevatedButton(
@@ -185,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //               fontWeight: FontWeight.w400,
               //               color: Colors.black,
               //               fontSize: 12,
-              //               fontFamily: 'Poppins'),
+              //               ),
               //         ),
               //       ),
               //       ElevatedButton(
@@ -201,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //               fontWeight: FontWeight.w400,
               //               color: Colors.black,
               //               fontSize: 12,
-              //               fontFamily: 'Poppins'),
+              //               ),
               //         ),
               //       ),
               //       ElevatedButton(
@@ -217,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //               fontWeight: FontWeight.w400,
               //               color: Colors.black,
               //               fontSize: 12,
-              //               fontFamily: 'Poppins'),
+              //               ),
               //         ),
               //       ),
               //     ],
@@ -233,17 +231,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                       "Event Populer",
                       style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'Poppins'),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black45,
-                            fontFamily: 'Poppins'),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black45,
+                        ),
                       ),
                       onPressed: () {},
                       child: const Text('Lihat Semua'),
@@ -264,7 +262,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Card(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20.0)),
-                        color: Color.fromARGB(31, 177, 177, 177),
+                        color: Color.fromRGBO(28, 56, 121, 1),
                         child: SizedBox(
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
@@ -288,7 +286,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   height: 10,
                                 ),
                                 Container(
-                                  padding: const EdgeInsets.all(10),
+                                  padding: const EdgeInsets.only(
+                                      left: 15, top: 5, right: 15, bottom: 10),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -298,10 +297,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: Text(
                                           this.names[i],
                                           style: TextStyle(
-                                              fontSize: 18,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'Poppins'),
+                                            fontSize: 18,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                         ),
                                       ),
                                       SizedBox(
@@ -309,17 +308,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: Text(
                                           "IDR 1.350.000",
                                           style: TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w600,
-                                              fontFamily: 'Poppins'),
+                                            fontSize: 14,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                         ),
                                       )
                                     ],
                                   ),
                                 ),
                                 Container(
-                                  padding: const EdgeInsets.all(10),
+                                  padding: const EdgeInsets.only(
+                                      left: 15, right: 15),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -327,17 +327,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Text(
                                         "Gelora Bung Karno, Indonesia",
                                         style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w500,
-                                            fontFamily: 'Poppins'),
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                       Text(
                                         "6.170",
                                         style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.white,
-                                            fontFamily: 'Poppins'),
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white,
+                                        ),
                                       )
                                     ],
                                   ),
