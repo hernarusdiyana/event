@@ -19,23 +19,23 @@ class DetailEventState extends State<DetailEvent> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   backgroundColor: Color.fromARGB(9, 191, 191, 191),
-      //   elevation: 0,
-      //   title: Text(
-      //     "Detail Event",
-      //     style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
-      //   ),
-      //   actions: <Widget>[
-      //     IconButton(
-      //       onPressed: () {},
-      //       icon: Icon(
-      //         Icons.share,
-      //         color: Colors.black,
-      //       ),
-      //     ),
-      //   ],
-      // ),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(191, 191, 191, 1),
+        elevation: 0,
+        title: Text(
+          "Detail Event",
+          style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.share,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Container(
           child: Scrollbar(
@@ -64,12 +64,33 @@ class DetailEventState extends State<DetailEvent> {
                               fontWeight: FontWeight.w600),
                         ),
                       ),
-                      Text(
-                        "IDR 1.350.000",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w600,
+                      SizedBox(
+                        child: Container(
+                          padding: EdgeInsets.all(10.0),
+                          clipBehavior: Clip.hardEdge,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Color.fromRGBO(217, 217, 217, 0.5),
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Mulai dari",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.black26),
+                              ),
+                              Text(
+                                "IDR 1.350.000",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -198,6 +219,7 @@ class DetailEventState extends State<DetailEvent> {
                     children: [
                       Text(
                         "Katalog Paket",
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
@@ -295,12 +317,13 @@ class DetailEventState extends State<DetailEvent> {
                                         Container(
                                           padding: const EdgeInsets.only(
                                               left: 15, top: 15, right: 15),
-                                          child: Row(
+                                          child: Column(
                                             mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
+                                                MainAxisAlignment.start,
                                             children: [
                                               Text(
                                                 "IDR 3.000.000",
+                                                textAlign: TextAlign.left,
                                                 style: TextStyle(
                                                   fontSize: 16,
                                                   color: Colors.white,
@@ -308,13 +331,28 @@ class DetailEventState extends State<DetailEvent> {
                                                 ),
                                               ),
                                               Text(
-                                                "6.170",
+                                                "Lorem Ipsum",
+                                                textAlign: TextAlign.start,
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w500,
                                                   color: Colors.white,
                                                 ),
-                                              )
+                                              ),
+                                              TextButton(
+                                                style: TextButton.styleFrom(
+                                                  textStyle: const TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                                onPressed: () {},
+                                                child: const Text(
+                                                  'Detail',
+                                                  style: TextStyle(
+                                                      color: Colors.black),
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -327,7 +365,59 @@ class DetailEventState extends State<DetailEvent> {
                           },
                         ),
                       ),
-
+                      Container(
+                        padding: EdgeInsets.only(top: 15, bottom: 15),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Info Lainnya",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w600),
+                            ),
+                            SizedBox(
+                              child: Container(
+                                padding: EdgeInsets.all(15),
+                                width: MediaQuery.of(context).size.width,
+                                clipBehavior: Clip.hardEdge,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(217, 217, 217, 0.2),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  border: Border.all(style: BorderStyle.solid),
+                                ),
+                                child: Text("Penukaran Tiket"),
+                              ),
+                            ),
+                            SizedBox(
+                              child: Container(
+                                padding: EdgeInsets.all(15),
+                                width: MediaQuery.of(context).size.width,
+                                clipBehavior: Clip.hardEdge,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(217, 217, 217, 0.2),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  border: Border.all(style: BorderStyle.solid),
+                                ),
+                                child: Text("Penukaran Tiket"),
+                              ),
+                            ),
+                            SizedBox(
+                              child: Container(
+                                padding: EdgeInsets.all(15),
+                                width: MediaQuery.of(context).size.width,
+                                clipBehavior: Clip.hardEdge,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(217, 217, 217, 0.2),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  border: Border.all(style: BorderStyle.solid),
+                                ),
+                                child: Text("Penukaran Tiket"),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
                       Container(
                         width: MediaQuery.of(context).size.width,
                         height: 50,

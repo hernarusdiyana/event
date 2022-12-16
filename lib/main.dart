@@ -62,12 +62,19 @@ class _MyHomePageState extends State<MyHomePage> {
     'Ini Konser',
     'Event Apa gitu ini',
   ];
-  final List<String> phones = [
-    '(021)678392',
-    '(021)678334',
-    '(021)672414',
-    '(021)678390',
-    '(021)679992',
+  final List<String> location = [
+    'Gelora Bung Karno, Jakarta',
+    'Gelora Bung Karno, Jakarta',
+    'Mars, Tata Surya',
+    'Ini Lokasi, Indonesia',
+    'Kampus Bina Insani, Bekasi'
+  ];
+  final List<String> startFrom = [
+    '1.350.000',
+    '1.350.000',
+    '7.600.000',
+    '100.000',
+    '150.000',
   ];
 
   @override
@@ -304,13 +311,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                       ),
                                       SizedBox(
-                                        // width: 100,
-                                        child: Text(
-                                          "IDR 1.350.000",
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w600,
+                                        child: Container(
+                                          padding: EdgeInsets.all(10.0),
+                                          clipBehavior: Clip.hardEdge,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                            color: Color.fromRGBO(
+                                                217, 217, 217, 0.1),
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                "Mulai dari",
+                                                style: TextStyle(
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w300,
+                                                    color: Colors.white),
+                                              ),
+                                              Text(
+                                                "IDR " + this.startFrom[i],
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.w700,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       )
